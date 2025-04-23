@@ -2,7 +2,6 @@ Unity中使用Sprie.pdf.dll 实现PDF文件的读取查看以及搜索特定文�
 
 准备环境： Unity 2022.3.55编辑器, Rider编译器，Plugins：Spire.Doc.dll，Spire.License.dll，Spire.Pdf.dll，Microsoft.mshtml.dll
 
-![image](https://github.com/ZhiliangMa/MPU6500-HMC5983-AK8975-BMP280-MS5611-10DOF-IMU-PCB/blob/main/img/IMU-V5-TOP.jpg)
 
 ![image](https://github.com/SlienceLove/UnityPdfTools/blob/main/Src/9c3f12fa-44de-4770-a4aa-8511af36421f.png)
 
