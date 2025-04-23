@@ -5,3 +5,4 @@ Unity中使用Sprie.pdf.dll 实现PDF文件的读取查看以及搜索特定文�
 
 ![image](https://github.com/SlienceLove/UnityPdfTools/blob/main/Src/9c3f12fa-44de-4770-a4aa-8511af36421f.png)
 
+![video]https://github.com/SlienceLove/UnityPdfTools/blob/main/Src/Compare-HD.mp4
