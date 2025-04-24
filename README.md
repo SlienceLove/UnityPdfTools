@@ -1,6 +1,6 @@
-#Unity中使用Sprie.pdf.dll以及将Python环境集成 实现PDF文件的读取查看以及搜索特定文字高亮部分,以及图片对比功能 Word转化Pdf功能
+# Unity中使用Sprie.pdf.dll以及将Python环境集成 实现PDF文件的读取查看以及搜索特定文字高亮部分,以及图片对比功能 Word转化Pdf功能
 
-具体步骤：
+## 具体步骤：
 1. 从官网下载Sprie.pdf，配置Python虚拟环境，下载脚本中所有的依赖库， 将Python解释器和脚本放置到Unity的StreamAsset文件夹下，并创建一个lib文件 用于存放所有的依赖库文件
 
 
