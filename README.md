@@ -1,8 +1,55 @@
 # Unity中使用Sprie.pdf.dll以及将Python环境集成 实现PDF文件的读取查看以及搜索特定文字高亮部分,以及图片对比功能 Word转化Pdf功能
 
 ## 具体步骤：
-1. 从官网下载Sprie.pdf，配置Python虚拟环境，下载脚本中所有的依赖库， 将Python解释器和脚本放置到Unity的StreamAsset文件夹下，并创建一个lib文件 用于存放所有的依赖库文件
+### 1. 从官网下载Sprie.pdf，配置Python虚拟环境，下载py脚本中所有的依赖库，我这里使用的Python3.11,版本，实测3.12兼容性有问题所以回退了一个版本 
+### 2. 将Python解释器和脚本放置到Unity的StreamingAssets文件夹下，创建一个lib文件 用于存放所有的依赖库文件
+### 3. 在Unity中编写一个Python启动入口，列入PythonRoot，在这个文件中 设置Python的解释器路径以及Python脚本的路径，并添加一些调试信息便于查看py的信息
 
+        public void OnButtonClick(string scriptPath)
+        {
+            // 获取 Python 解释器和脚本的绝对路径
+            string pythonExeFullPath = Path.Combine(Application.streamingAssetsPath, "python.exe");
+            string scriptFullPath = Path.Combine(Application.streamingAssetsPath, scriptPath);
+
+            // 设置工作目录
+            string workingDirectory = Path.GetDirectoryName(pythonExeFullPath);
+
+            // 创建进程启动信息
+            ProcessStartInfo startInfo = new ProcessStartInfo
+            {
+                FileName = pythonExeFullPath,
+                Arguments = $"\"{scriptFullPath}\"",
+                WorkingDirectory = workingDirectory,
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                CreateNoWindow = true
+            };
+
+            // 启动进程
+            using (Process process = new Process { StartInfo = startInfo })
+            {
+                process.Start();
+                // 读取标准输出
+                string stdout = process.StandardOutput.ReadToEnd();
+                // 读取标准错误
+                string stderr = process.StandardError.ReadToEnd();
+
+                process.WaitForExit();
+
+                // 输出日志
+                // Debug.Log("Standard Output:");
+                Debug.Log(stdout);
+
+                // Debug.LogError("Standard Error:");
+                Debug.LogError(stderr);
+
+                if (process.ExitCode != 0)
+                {
+                    Debug.LogError($"Python script exited with code {process.ExitCode}");
+                }
+            }
+            
 
 
 
