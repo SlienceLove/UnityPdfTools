@@ -1,5 +1,9 @@
 # Unity中使用Sprie.pdf.dll以及将Python环境集成 实现PDF文件的读取查看以及搜索特定文字高亮部分,以及图片对比功能 Word转化Pdf功能
-
+## 准备： Unity 2022.3.55编辑器, Rider2023IDE，Plugins：Spire.Doc.dll，Spire.License.dll，Spire.Pdf.dll，Microsoft.mshtml.dll， Python3.11以及各种依赖库
+最好是虚拟环境中下载所有的依赖库：
+python -m venv myenv
+myenv\Scripts\activate
+pip install fitz Pillow numpy opencv-python scikit-image scipy imagehash
 ## 具体步骤：
 ### 1. 从官网下载Sprie.pdf，配置Python虚拟环境，下载py脚本中所有的依赖库，我这里使用的Python3.11,版本，实测3.12兼容性有问题所以回退了一个版本 
 ### 2. 将Python解释器和脚本放置到Unity的StreamingAssets文件夹下，创建一个lib文件 用于存放所有的依赖库文件
@@ -55,8 +59,6 @@
 
 
 
-
-准备环境： Unity 2022.3.55编辑器, Rider编译器，Plugins：Spire.Doc.dll，Spire.License.dll，Spire.Pdf.dll，Microsoft.mshtml.dll， Python3.11以及各自依赖库
 
 补充几张Unity运行时的图片
 ![image](https://github.com/SlienceLove/UnityPdfTools/blob/main/Src/9c3f12fa-44de-4770-a4aa-8511af36421f.png)
