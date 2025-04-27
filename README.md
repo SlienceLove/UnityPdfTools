@@ -6,7 +6,8 @@ myenv\Scripts\activate
 pip install fitz Pillow numpy opencv-python scikit-image scipy imagehash
 ## 具体步骤：
 ### 1. 从官网下载Sprie.pdf，配置Python虚拟环境，下载py脚本中所有的依赖库，我这里使用的Python3.11,版本，实测3.12兼容性有问题所以回退了一个版本 
-### 2. 将Python解释器和脚本放置到Unity的StreamingAssets文件夹下，创建一个lib文件 用于存放所有的依赖库文件
+### 2. 将Python解释器和脚本放置到Unity的StreamingAssets文件夹下，创建一个PythonEnv文件夹， 里面存放Python解释器以及所需要的依赖库 这里我安装的是Python311版本，本地默认路径在C:\Users\Administrator\AppData\Local\Programs\Python\Python311， 需要将python.exe，lib dlls tcl这几个文件一同拷贝到PythonEnv目录下
+
 ### 3. 在Unity中编写一个Python启动入口，列入PythonRoot，在这个文件中 设置Python的解释器路径以及Python脚本的路径，并添加一些调试信息便于查看py的信息
 
         public void OnButtonClick(string scriptPath)
